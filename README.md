@@ -1,5 +1,12 @@
 ## Scripts
 
+In the `api-src/` directory, you can run:
+
+### `dotnet run`
+
+Runs the API server at https://localhost:5001 to provide data to the React app.
+You will need to visit that URL and instruct your browser to trust the server's certificate, as the self-signed cert provided by the server will be recognized as invalid.
+
 In the project directory, you can run:
 
 ### `npm start`
