@@ -23,15 +23,14 @@ function App() {
 
   const filteredData = useMemo(() => {
     if (!data) return data;
-    console.log(data, selectedCountry);
     const searchRegex = new RegExp(search, "i");
-    return data.filter(
-      (d) =>
-        (selectedCountry === "" ||
-          d.Country === selectedCountry ||
-          (d.Country === null && selectedCountry === "NOCOUNTRY")) &&
-        keys.some((k) => searchRegex.test(d[k]?.toString()))
-    );
+    const countryFilter =
+      selectedCountry === "NOCOUNTRY" ? null : selectedCountry;
+    return data.filter((d) => {
+      if (countryFilter !== "" && d.Country !== countryFilter) return false;
+      if (!keys.some((k) => searchRegex.test(d[k]?.toString()))) return false;
+      return true;
+    });
   }, [data, search, selectedCountry]);
 
   if (isPending) {
