@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,6 +13,7 @@ namespace api_src.Controllers
 {
   [ApiController]
   [Route("[controller]/honda")]
+  [EnableCors("LocalhostPolicy")]
   public class WMIController : ControllerBase
   {
     private static JsonSerializer jsonSerializer = new JsonSerializer();

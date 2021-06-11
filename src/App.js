@@ -1,9 +1,29 @@
 import React from "react";
+import useAsync from "./hooks/useAsync.js";
 import "./App.css";
-import data from "./honda_wmi.json";
 
 function App() {
   const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
+  const { isPending, result: data, error } = useAsync(async () => {
+    const res = await fetch("https://localhost:5001/wmi/honda");
+    return res.json();
+  }, []);
+
+  if (isPending) {
+    return "Loading";
+  }
+
+  if (error) {
+    return (
+      <div className="App error">
+        <strong>Error:</strong>
+        <p>{error.message}</p>
+        <pre>
+          <code>{error.stack}</code>
+        </pre>
+      </div>
+    );
+  }
 
   const getRowsJsx = () => {
     return data.map((d) => {
@@ -24,7 +44,6 @@ function App() {
       <table>
         <thead>
           <tr>
-            `
             {keys.map((k) => (
               <th key={k}>{k}</th>
             ))}
