@@ -1,5 +1,12 @@
 ## Scripts
 
+In the `api-src/` directory, you can run:
+
+### `dotnet run`
+
+Runs the API server at https://localhost:5001 to provide data to the React app.
+You will need to visit that URL and instruct your browser to trust the server's certificate, as the self-signed cert provided by the server will be recognized as invalid.
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -11,17 +18,18 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ### `npm test`
+
 Runs a set of basic tests for the app.
 
 ## Tasks
 
-- [ ] Move `honda_wmi.json` file's content to a backend API written in C# & ASP.NET Core 3.1
+- [x] Move `honda_wmi.json` file's content to a backend API written in C# & ASP.NET Core 3.1
   - Data must be retrieved from the API and rendered instead of from the local browser
   - A spinner or a `Loading...` text must appear while the request is in flight
-- [ ] Style `table` element that displays WMI table
-- [ ] Render data sorted by `CreatedOn` and then by `WMI`
-- [ ] Introduce a search box to accept user input, filter and render data
-- [ ] Introduce a `Select` control to group by country
+- [x] Style `table` element that displays WMI table
+- [x] Render data sorted by `CreatedOn` and then by `WMI`
+- [x] Introduce a search box to accept user input, filter and render data
+- [x] Introduce a `Select` control to group by country
   - By default `View All` option must be selected, rendering all records
   - Distinct countries must be available for user selection
   - On selecting a country, data must be filtered down to just the country
