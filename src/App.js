@@ -13,15 +13,26 @@ function App() {
     return rawData;
   }, []);
 
-  const [search, setSearch] = useState("cana");
+  const countries = useMemo(() => {
+    const unique = new Set(data?.map((d) => d.Country) || []);
+    return Array.from(unique).sort();
+  }, [data]);
+
+  const [search, setSearch] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
 
   const filteredData = useMemo(() => {
-    if (!search || !data) return data;
+    if (!data) return data;
+    console.log(data, selectedCountry);
     const searchRegex = new RegExp(search, "i");
-    return data.filter((d) =>
-      keys.some((k) => searchRegex.test(d[k]?.toString()))
+    return data.filter(
+      (d) =>
+        (selectedCountry === "" ||
+          d.Country === selectedCountry ||
+          (d.Country === null && selectedCountry === "NOCOUNTRY")) &&
+        keys.some((k) => searchRegex.test(d[k]?.toString()))
     );
-  }, [data, search]);
+  }, [data, search, selectedCountry]);
 
   if (isPending) {
     return "Loading";
@@ -60,12 +71,25 @@ function App() {
       </header>
       <div className="App-body">
         <div className="App-controls">
-          <label for="App-search-input">Search:</label>
+          <label htmlFor="App-search-input">Search:</label>
           <input
             id="App-search-input"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
+          <select
+            value={selectedCountry}
+            onChange={(e) => setSelectedCountry(e.target.value)}
+          >
+            <option key="View All" value="">
+              View All
+            </option>
+            {countries.map((c) => (
+              <option key={c} value={c || "NOCOUNTRY"}>
+                {c || "[None]"}
+              </option>
+            ))}
+          </select>
         </div>
         <table className="App-table">
           <thead>

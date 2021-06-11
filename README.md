@@ -22,7 +22,7 @@ Runs a set of basic tests for the app.
 - [x] Style `table` element that displays WMI table
 - [x] Render data sorted by `CreatedOn` and then by `WMI`
 - [x] Introduce a search box to accept user input, filter and render data
-- [ ] Introduce a `Select` control to group by country
+- [x] Introduce a `Select` control to group by country
   - By default `View All` option must be selected, rendering all records
   - Distinct countries must be available for user selection
   - On selecting a country, data must be filtered down to just the country
