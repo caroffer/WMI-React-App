@@ -1,0 +1,9 @@
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\bin\Debug\netcoreapp3.1\WMI.React.App.Data.deps.json
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\bin\Debug\netcoreapp3.1\WMI.React.App.Data.dll
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\bin\Debug\netcoreapp3.1\WMI.React.App.Data.pdb
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\obj\Debug\netcoreapp3.1\WMI.React.App.Data.csprojAssemblyReference.cache
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\obj\Debug\netcoreapp3.1\WMI.React.App.Data.AssemblyInfoInputs.cache
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\obj\Debug\netcoreapp3.1\WMI.React.App.Data.AssemblyInfo.cs
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\obj\Debug\netcoreapp3.1\WMI.React.App.Data.csproj.CoreCompileInputs.cache
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\obj\Debug\netcoreapp3.1\WMI.React.App.Data.dll
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Data\obj\Debug\netcoreapp3.1\WMI.React.App.Data.pdb

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "L9lxcTFNC7ipnBrUJntOcE6Mqb9HWNmZM1Pzr9iZRT5T5FopeCmAEXMqswd4oj/6DMfvntcHa+32X+08F4MGiA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xeavi\\Documents\\GitHub\\WMI-React-App\\WMI.Reac.App.API\\WMI.React.App.Data\\WMI.React.App.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.15\\microsoft.entityframeworkcore.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.15\\microsoft.entityframeworkcore.abstractions.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.15\\microsoft.entityframeworkcore.analyzers.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.15\\microsoft.extensions.caching.abstractions.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.15\\microsoft.extensions.caching.memory.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.15\\microsoft.extensions.configuration.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.15\\microsoft.extensions.configuration.abstractions.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.15\\microsoft.extensions.configuration.binder.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.15\\microsoft.extensions.dependencyinjection.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.15\\microsoft.extensions.dependencyinjection.abstractions.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.logging\\3.1.15\\microsoft.extensions.logging.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.15\\microsoft.extensions.logging.abstractions.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.options\\3.1.15\\microsoft.extensions.options.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.15\\microsoft.extensions.primitives.3.1.15.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\xeavi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
