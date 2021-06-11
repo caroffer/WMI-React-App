@@ -20,7 +20,7 @@ Runs a set of basic tests for the app.
   - Data must be retrieved from the API and rendered instead of from the local browser
   - A spinner or a `Loading...` text must appear while the request is in flight
 - [x] Style `table` element that displays WMI table
-- [ ] Render data sorted by `CreatedOn` and then by `WMI`
+- [x] Render data sorted by `CreatedOn` and then by `WMI`
 - [ ] Introduce a search box to accept user input, filter and render data
 - [ ] Introduce a `Select` control to group by country
   - By default `View All` option must be selected, rendering all records

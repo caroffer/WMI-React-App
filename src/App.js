@@ -6,7 +6,10 @@ function App() {
   const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
   const { isPending, result: data, error } = useAsync(async () => {
     const res = await fetch("https://localhost:5001/wmi/honda");
-    return res.json();
+    const rawData = await res.json();
+    rawData.sort((a, b) => a.WMI?.localeCompare(b.WMI));
+    rawData.sort((a, b) => a.CreatedOn?.localeCompare(b.CreatedOn));
+    return rawData;
   }, []);
 
   if (isPending) {
