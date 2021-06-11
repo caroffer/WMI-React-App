@@ -1,0 +1,6 @@
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Database\bin\Debug\WMI.React.App.Database.dacpac
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Database\bin\Debug\WMI.React.App.Database.dll
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Database\bin\Debug\WMI.React.App.Database.pdb
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Database\obj\Debug\WMI.React.App.Database.dll
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Database\obj\Debug\WMI.React.App.Database.pdb
+C:\Users\xeavi\Documents\GitHub\WMI-React-App\WMI.Reac.App.API\WMI.React.App.Database\obj\Debug\WMI.React.App.Database.sqlprojAssemblyReference.cache

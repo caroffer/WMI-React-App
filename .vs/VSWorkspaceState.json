@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\WMI.Reac.App.API",
+    "\\WMI.Reac.App.API\\WMI.React.App.Database",
+    "\\WMI.Reac.App.API\\WMI.React.App.Database\\dbo\\Tables",
+    "\\WMI.Reac.App.API\\WMI.React.App.Database\\PostDeploy\\Seeds",
+    "\\WMI.Reac.App.API\\WMI.React.App.Data\\Models"
+  ],
+  "SelectedNode": "\\WMI.Reac.App.API\\WMI.React.App.Database\\WMI.React.App.Database.dbmdl",
+  "PreviewInSolutionExplorer": false
+}
