@@ -42,7 +42,7 @@ function App() {
 
           selectOptions = Object.assign({}, selectOptions);
           k.forEach((key) => {
-            if (key == "country") {
+            if (key === "country") {
               c.push({
                 dataField: key,
                 text: key,
@@ -81,7 +81,6 @@ function App() {
 
   const getTableJsx = () => {
     return [
-      <header>WMI Data - Honda | Total: {items.length}</header>,
       <ToolkitProvider keyField="wmi" data={items} columns={columns} search>
         {(props) => (
           <div>
@@ -115,7 +114,10 @@ function App() {
   };
 
   return (
-    <div className="App">{isLoaded ? getTableJsx() : getLoadingJsx()}</div>
+    <div className="App">
+      <header>WMI Data - Honda | Total: {items.length}</header>
+      {isLoaded ? getTableJsx() : getLoadingJsx()}
+    </div>
   );
 }
 
