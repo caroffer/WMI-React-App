@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import useAsync from "./hooks/useAsync.js";
 import "./App.css";
 
+const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
+
 function App() {
-  const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
   const { isPending, result: data, error } = useAsync(async () => {
     const res = await fetch("https://localhost:5001/wmi/honda");
     const rawData = await res.json();
@@ -11,6 +12,16 @@ function App() {
     rawData.sort((a, b) => a.CreatedOn?.localeCompare(b.CreatedOn));
     return rawData;
   }, []);
+
+  const [search, setSearch] = useState("cana");
+
+  const filteredData = useMemo(() => {
+    if (!search || !data) return data;
+    const searchRegex = new RegExp(search, "i");
+    return data.filter((d) =>
+      keys.some((k) => searchRegex.test(d[k]?.toString()))
+    );
+  }, [data, search]);
 
   if (isPending) {
     return "Loading";
@@ -29,7 +40,7 @@ function App() {
   }
 
   const getRowsJsx = () => {
-    return data.map((d) => {
+    return filteredData.map((d) => {
       const wmi = d.WMI;
       return (
         <tr key={wmi}>
@@ -47,16 +58,26 @@ function App() {
         <div className="App-logo"></div>
         <div className="App-title">WMI Data - Honda | Total: {data.length}</div>
       </header>
-      <table className="App-table">
-        <thead>
-          <tr>
-            {keys.map((k) => (
-              <th key={k}>{k}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>{getRowsJsx()}</tbody>
-      </table>
+      <div className="App-body">
+        <div className="App-controls">
+          <label for="App-search-input">Search:</label>
+          <input
+            id="App-search-input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+        <table className="App-table">
+          <thead>
+            <tr>
+              {keys.map((k) => (
+                <th key={k}>{k}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>{getRowsJsx()}</tbody>
+        </table>
+      </div>
     </div>
   );
 }

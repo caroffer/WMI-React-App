@@ -42,6 +42,20 @@
   }
 }
 
+.App-body {
+  min-height: 100vh;
+}
+
+.App-controls {
+  text-align: center;
+}
+
+.App-controls input {
+  width: 270px;
+  margin: 24px;
+  padding: 12px;
+}
+
 .App-table {
   margin: 24px auto;
   border-spacing: 0;
