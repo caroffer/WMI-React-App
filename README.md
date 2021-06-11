@@ -19,7 +19,7 @@ Runs a set of basic tests for the app.
 - [x] Move `honda_wmi.json` file's content to a backend API written in C# & ASP.NET Core 3.1
   - Data must be retrieved from the API and rendered instead of from the local browser
   - A spinner or a `Loading...` text must appear while the request is in flight
-- [ ] Style `table` element that displays WMI table
+- [x] Style `table` element that displays WMI table
 - [ ] Render data sorted by `CreatedOn` and then by `WMI`
 - [ ] Introduce a search box to accept user input, filter and render data
 - [ ] Introduce a `Select` control to group by country

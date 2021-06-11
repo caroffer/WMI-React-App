@@ -40,8 +40,11 @@ function App() {
 
   return (
     <div className="App">
-      <header>WMI Data - Honda | Total: {data.length}</header>
-      <table>
+      <header className="App-header">
+        <div className="App-logo"></div>
+        <div className="App-title">WMI Data - Honda | Total: {data.length}</div>
+      </header>
+      <table className="App-table">
         <thead>
           <tr>
             {keys.map((k) => (
