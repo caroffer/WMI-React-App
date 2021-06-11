@@ -31,7 +31,7 @@ test("renders wmi data", () => {
     result: [{ WMI: "foo", Country: "USA" }],
   });
   render(<App />);
-  const linkElements = screen.getAllByText(/usa/i);
+  const linkElements = screen.getAllByRole("row", { name: /usa/i });
   expect(linkElements.length).toBe(1);
 });
 
