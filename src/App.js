@@ -1,12 +1,57 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
+import AsyncCall from "./common/AsyncCall.js";
 import "./App.css";
-import data from "./honda_wmi.json";
+
+const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
 
 function App() {
-  const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
+  const { isPending, result: data, error } = AsyncCall(async () => {
+    const res = await fetch("http://localhost:5000/wmi/honda");
+    const rawData = await res.json();
+    rawData.sort((a, b) => b.CreatedOn?.localeCompare(a.CreatedOn));
+    rawData.sort((a, b) => a.WMI?.localeCompare(b.WMI));
+
+    return rawData;
+  }, []);
+
+  const countries = useMemo(() => {
+    const unique = new Set(data?.map((d) => d.Country) || []);
+    return Array.from(unique).sort();
+  }, [data]);
+
+  const [search, setSearch] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
+
+  const filteredData = useMemo(() => {
+    if (!data) return data;
+    const searchRegex = new RegExp(search, "i");
+    const countryFilter =
+      selectedCountry === "NOCOUNTRY" ? null : selectedCountry;
+    return data.filter((d) => {
+      if (countryFilter !== "" && d.Country !== countryFilter) return false;
+      if (!keys.some((k) => searchRegex.test(d[k]?.toString()))) return false;
+      return true;
+    });
+  }, [data, search, selectedCountry]);
+
+  if (isPending) {
+    return "Loading";
+  }
+
+  if (error) {
+    return (
+      <div className="App error">
+        <strong>Error:</strong>
+        <p>{error.message}</p>
+        <pre>
+          <code>{error.stack}</code>
+        </pre>
+      </div>
+    );
+  }
 
   const getRowsJsx = () => {
-    return data.map((d) => {
+    return filteredData.map((d) => {
       const wmi = d.WMI;
       return (
         <tr key={wmi}>
@@ -20,18 +65,45 @@ function App() {
 
   return (
     <div className="App">
-      <header>WMI Data - Honda | Total: {data.length}</header>
-      <table>
-        <thead>
-          <tr>
-            `
-            {keys.map((k) => (
-              <th key={k}>{k}</th>
+      <header className="App-header">
+        <div className="App-logo"></div>
+        <div className="App-title">WMI Data - Honda | Total: {data.length}</div>
+      </header>
+      <div className="App-body">
+        <div className="App-controls">
+          <label htmlFor="App-search-input" className="lblSearch">
+            Search:
+          </label>
+          <input
+            id="App-search-input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <select
+            value={selectedCountry}
+            onChange={(e) => setSelectedCountry(e.target.value)}
+          >
+            <option key="View All" value="">
+              View All
+            </option>
+            {countries.map((c) => (
+              <option key={c} value={c || "NOCOUNTRY"}>
+                {c || "[None]"}
+              </option>
             ))}
-          </tr>
-        </thead>
-        <tbody>{getRowsJsx()}</tbody>
-      </table>
+          </select>
+        </div>
+        <table className="App-table">
+          <thead>
+            <tr>
+              {keys.map((k) => (
+                <th key={k}>{k}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>{getRowsJsx()}</tbody>
+        </table>
+      </div>
     </div>
   );
 }
