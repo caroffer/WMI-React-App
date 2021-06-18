@@ -1,0 +1,56 @@
+{
+  "format": 1,
+  "restore": {
+    "L:\\Projects\\React\\WMI-React-App\\WMI-API\\WMI-API.csproj": {}
+  },
+  "projects": {
+    "L:\\Projects\\React\\WMI-React-App\\WMI-API\\WMI-API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "L:\\Projects\\React\\WMI-React-App\\WMI-API\\WMI-API.csproj",
+        "projectName": "WMI-API",
+        "projectPath": "L:\\Projects\\React\\WMI-React-App\\WMI-API\\WMI-API.csproj",
+        "packagesPath": "C:\\Users\\gdravi143\\.nuget\\packages\\",
+        "outputPath": "L:\\Projects\\React\\WMI-React-App\\WMI-API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\gdravi143\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": ["netcoreapp3.1"],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": ["NU1605"]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": ["net461", "net462", "net47", "net471", "net472", "net48"],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
