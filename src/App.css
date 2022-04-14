@@ -15,12 +15,12 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(1px + 2vmin);
   color: white;
 }
 
@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+.Div {
+  margin: 0 auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.TH {
+  vertical-align: middle;
+  text-align: center;
+  border: 0;
+  height: 25px;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 3 auto;
+  text-decoration: underline;
+  top: 0 auto;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
