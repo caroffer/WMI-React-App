@@ -24,7 +24,6 @@ function App() {
       <table>
         <thead>
           <tr>
-            `
             {keys.map((k) => (
               <th key={k}>{k}</th>
             ))}
