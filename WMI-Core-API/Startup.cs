@@ -1,15 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using WMI_Core_API.Data;
 
 namespace WMI_Core_API
 {
@@ -34,7 +29,7 @@ namespace WMI_Core_API
                 .GetChildren()
                 .ToList()
                 .Select(section => 
-                    new IHondaWMI(section["Country"], 
+                    new HondaWMI(section["Country"], 
                     section["CreatedOn"], 
                     section["DateAvailableToPublic"], 
                     int.Parse(section["Id"]), 

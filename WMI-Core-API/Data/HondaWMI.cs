@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace WMI_Core_API
+namespace WMI_Core_API.Data
 {
-    public class IHondaWMI
+    public class HondaWMI
     {
-        public IHondaWMI(string country, string createdOn, string dateAvailableToPublic, int? id, string name, string updatedOn, string vehicleType, string wMI)
+        public HondaWMI(string country, string createdOn, string dateAvailableToPublic, int? id, string name, string updatedOn, string vehicleType, string wMI)
         {
             Country = country;
-            CreatedOn =  string.IsNullOrEmpty(createdOn)? null : (DateTime?) DateTime.Parse(createdOn);
+            CreatedOn = string.IsNullOrEmpty(createdOn) ? null : (DateTime?)DateTime.Parse(createdOn);
             DateAvailableToPublic = string.IsNullOrEmpty(dateAvailableToPublic) ? null : (DateTime?)DateTime.Parse(dateAvailableToPublic);
             Id = id;
             Name = name;
