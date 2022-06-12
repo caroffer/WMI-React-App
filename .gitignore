@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+/WMI-Core-API/.vs
+/WMI-Core-API/obj

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMI-Core-API", "WMI-Core-API.csproj", "{0AE11310-36D0-4472-BCA5-6CB0A9AE06FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE11310-36D0-4472-BCA5-6CB0A9AE06FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE11310-36D0-4472-BCA5-6CB0A9AE06FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE11310-36D0-4472-BCA5-6CB0A9AE06FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE11310-36D0-4472-BCA5-6CB0A9AE06FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE7DD3E8-10B6-43D9-9927-2BB340DA79BA}
+	EndGlobalSection
+EndGlobal
