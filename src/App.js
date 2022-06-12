@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import data from "./honda_wmi.json";
+
+const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
 
 function App() {
-  const keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    async function fetchData() {
+      await fetch("https://localhost:5001/api/honda").then(res => res.json()).then(data => {
+        setData(data);
+      }).catch(error => console.warn(error)).finally(setIsLoading(false))
+    }
+    fetchData();
+  },[])
+
 
   const getRowsJsx = () => {
     return data.map((d) => {
-      const wmi = d.WMI;
+      const wmi = d.wmi;
       return (
         <tr key={wmi}>
           {keys.map((k) => (
@@ -20,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>WMI Data - Honda | Total: {data.length}</header>
+      {<header>WMI Data - Honda | Total: {data.length}</header>}
       <table>
         <thead>
           <tr>
