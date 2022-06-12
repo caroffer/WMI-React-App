@@ -26,6 +26,20 @@ namespace WMI_Core_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton(
+                Configuration.GetSection("Honda_WMI:List")
+                .GetChildren()
+                .ToList()
+                .Select(section => 
+                    new IHondaWMI(section["Country"], 
+                    section["CreatedOn"], 
+                    section["DateAvailableToPublic"], 
+                    int.Parse(section["Id"]), 
+                    section["Name"], 
+                    section["UpdatedOn"], 
+                    section["VehicleType"], 
+                    section["WMI"]))
+                .ToList());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
