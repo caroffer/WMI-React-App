@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using WMI_Core_API.Data;
 
 namespace WMI_Core_API.Controllers
 {
@@ -7,14 +8,14 @@ namespace WMI_Core_API.Controllers
     [ApiController]
     public class HondaController : ControllerBase
     {
-        private List<IHondaWMI> _data;
-        public HondaController(List<IHondaWMI> data)
+        private List<HondaWMI> _data;
+        public HondaController(List<HondaWMI> data)
         {
             _data = data;
         }
 
         [HttpGet]
-        public List<IHondaWMI> Get()
+        public List<HondaWMI> Get()
         {
             return _data;
         }

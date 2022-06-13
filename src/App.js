@@ -11,11 +11,12 @@ function App() {
     setIsLoading(true);
     async function fetchData() {
       await fetch("https://localhost:5001/api/honda").then(res => res.json()).then(data => {
+        data.sort((a, b) => a?.CreatedOn.localeCompare(b?.CreatedOn) || a?.WMI.localeCompare(b?.WMI));
         setData(data);
       }).catch(error => console.warn(error)).finally(setIsLoading(false))
     }
     fetchData();
-  },[])
+  }, [])
 
 
   const getRowsJsx = () => {
@@ -37,7 +38,6 @@ function App() {
       <table>
         <thead>
           <tr>
-            `
             {keys.map((k) => (
               <th key={k}>{k}</th>
             ))}
