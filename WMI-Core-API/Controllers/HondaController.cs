@@ -17,6 +17,7 @@ namespace WMI_Core_API.Controllers
         [HttpGet]
         public List<HondaWMI> Get()
         {
+            System.Threading.Thread.Sleep(1000);
             return _data;
         }
     }
