@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+/WMI-Core-API/.vs
+/WMI-Core-API/obj
+/WMI-Core-API/bin/Debug/netcoreapp3.1

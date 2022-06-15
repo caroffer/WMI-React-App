@@ -1,0 +1,68 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System.Linq;
+using WMI_Core_API.Data;
+
+namespace WMI_Core_API
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddCors()
+                .AddControllers()
+                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+            services.AddSingleton(
+                Configuration.GetSection("Honda_WMI:List")
+                .GetChildren()
+                .ToList()
+                .Select(section => 
+                    new HondaWMI(section["Country"], 
+                    section["CreatedOn"], 
+                    section["DateAvailableToPublic"], 
+                    int.Parse(section["Id"]), 
+                    section["Name"], 
+                    section["UpdatedOn"], 
+                    section["VehicleType"], 
+                    section["WMI"]))
+                .ToList());
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseCors(cors => cors.AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+                .AllowCredentials());
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
+    }
+}
