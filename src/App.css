@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  background-color: rgba(221, 255, 85, 255);
+  color: rgb(0, 0, 0);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 5rem;
+  height: 5rem;
+  border: 10px solid #ffffff; /* Light grey */
+  border-top: 10px solid #000000;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
