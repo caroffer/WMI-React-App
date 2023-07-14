@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "38r/beUBuBB8uZ7okW2lco9UPfZ4NJDrCbO1es+16Ls=",
+  "Source": "api-wmi",
+  "BasePath": "_content/api-wmi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
